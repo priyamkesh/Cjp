@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cockroach Janta Party — Merch Store</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="logo.png">
+</head>
+<body>
+<header>
+  <img src="logo.png" alt="CJP" onerror="this.style.display='none'">
+  <h1>Cockroach Janta Party Merch</h1>
+  <div class="spacer"></div>
+  <button id="cartBtn" class="btn-ghost btn">Cart (<span id="cartCount">0</span>)</button>
+  <a href="dashboard.html" class="btn">Dashboard</a>
+</header>
+
+<div class="container">
+  <p class="muted">Voice of the Lazy & Unemployed. Official satirical merch — powered by GitHub Issues.</p>
+  <div id="products" class="grid"></div>
+</div>
+
+<div id="cartDrawer" class="cart-drawer">
+  <div style="padding:12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1f2924">
+    <strong>Your Cart</strong>
+    <button id="closeCart" class="btn-ghost btn">Close</button>
+  </div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="drawer-foot">
+    <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span>Subtotal</span><strong id="subtotal">₹0</strong></div>
+    <button id="checkoutBtn" class="btn" style="width:100%">Checkout</button>
+    <p class="muted" style="margin-top:8px">COD by default. Prepaid → WhatsApp.</p>
+  </div>
+</div>
+
+<div id="checkoutModal" class="modal">
+  <div class="modal-card">
+    <h3>Checkout</h3>
+    <label>Name</label><input id="c_name" class="input">
+    <div class="row">
+      <div><label>Phone</label><input id="c_phone" class="input"></div>
+      <div><label>WhatsApp</label><input id="c_whatsapp" class="input"></div>
+    </div>
+    <label>Full Address</label><input id="c_address" class="input">
+    <div class="row">
+      <div><label>Pincode</label><input id="c_pincode" class="input"></div>
+      <div><label>Payment</label><div><label><input type="radio" name="pay" value="cod" checked> COD</label> <label style="margin-left:12px"><input type="radio" name="pay" value="prepaid"> Prepaid (WhatsApp)</label></div></div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:12px">
+      <button id="placeOrder" class="btn" style="flex:1">Place Order</button>
+      <button onclick="document.getElementById('checkoutModal').classList.remove('open')" class="btn-ghost btn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Cockroach Janta Party. Not a real political party. For memes only.</footer>
+
+<script type="module" src="js/shop.js"></script>
+</body>
+</html>
